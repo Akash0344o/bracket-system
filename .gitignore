@@ -1,0 +1,16 @@
+
+---
+
+### 📄 Add this to `.gitignore`:
+```gitignore
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+dist/
+build/
+.env
