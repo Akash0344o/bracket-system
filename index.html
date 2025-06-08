@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BPF Tournament Bracket</title>
+  <link rel="stylesheet" href="bracket.css" />
+   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="bracket-container">
+    <header class="header">
+      <h1 id="tournament-title" contenteditable="true">Bengal Pes federation</h1>
+      <div class="toolbar">
+        <input type="file" id="uploadCSV" accept=".csv" />
+        <button onclick="generateBracket()">Generate Bracket</button>
+        <button onclick="exportToPDF()">Export PDF</button>
+        <button onclick="toggleDoubleElimination()">Toggle Double Elimination</button>
+      </div>
+    </header>
+
+    <section id="bracket" class="bracket"></section>
+
+    <template id="match-template">
+      <div class="match">
+        <div class="team" onclick="advanceTeam(this)">
+          <span class="team-name">Team A</span>
+          <input class="score" type="number" placeholder="0" />
+        </div>
+        <div class="team" onclick="advanceTeam(this)">
+          <span class="team-name">Team B</span>
+          <input class="score" type="number" placeholder="0" />
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <footer class="footer">
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="sitemap.html">Sitemap</a>
+        </div>
+
+        <p class="footer-text">© 2023 <span class="brand-name">Bengal PES Federation</span>. All rights reserved.</p>
+        <p class="footer-text">Designed by <span class="designer">Akash</span></p>
+    </footer>
+
+  <!-- External Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="bracket.js"></script>
+</body>
+</html>
